@@ -26,6 +26,14 @@ describe('the dealership app', {:type => :feature}) do
     end
   end
 
+  describe('vehicle id path') do
+    it('displays a vehicle page by id') do
+      visit('/vehicles/1')
+      bike = Vehicle.new('M', 'M', 2015)
+      expect(page).to(have_content('2015'))
+    end
+  end
+
 end
 
 

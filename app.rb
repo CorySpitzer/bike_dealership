@@ -21,3 +21,8 @@ post('/dealership_add_success') do
   Dealership.new(name).save()
   erb(:success)
 end
+
+get('/vehicles/:id') do
+  # @vehicle = Vehicle.find(params.fetch('id'))
+  erb(:vehicle)
+end
