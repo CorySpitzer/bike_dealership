@@ -21,4 +21,10 @@ describe(Dealership) do
     end
   end
 
+  describe('bikes') do
+    it('initially returns an empty array of bikes') do
+      expect(Dealership.new('Velo Cult').bikes()).to(eq([]))
+    end
+  end
+
 end
