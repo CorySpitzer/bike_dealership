@@ -5,11 +5,13 @@ class Vehicle
   attr_reader :year
   attr_reader :make
   attr_reader :model
+  attr_reader :id
 
   define_method(:initialize) do |make, model, year|
     @make = make
     @model = model
     @year = year
+    @id = @@vehicles.length()+1
   end
 
   define_method(:save) do
@@ -38,5 +40,12 @@ class Vehicle
     age = current_year.-(@year)
   end
 
+  define_singleton_method(:find) do |id|
+    @@vehicles.each() do |vehicle|
+      if vehicle.id() == id
+        return vehicle
+      end
+    end
+  end
 
 end
