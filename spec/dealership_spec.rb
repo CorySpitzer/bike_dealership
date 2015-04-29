@@ -21,10 +21,32 @@ describe(Dealership) do
     end
   end
 
-  describe('bikes') do
+  describe('#bikes') do
     it('initially returns an empty array of bikes') do
       expect(Dealership.new('Velo Cult').bikes()).to(eq([]))
     end
   end
 
+  describe('#save') do
+    it("adds a dealership to the array of saved dealerships") do
+      test_dealership = Dealership.new("Velo Cult")
+      test_dealership.save()
+      expect(Dealership.all()).to(eq([test_dealership]))
+    end
+  end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Dealership.all()).to(eq([]))
+    end
+  end
+
+  describe(".clear") do
+    it("empties out all the saved daelerships") do
+      Dealership.new("Velo Cult").save()
+      Dealership.clear()
+      expect(Dealership.all()).to(eq([]))
+    end
+  end
+  
 end
