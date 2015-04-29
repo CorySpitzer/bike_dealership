@@ -49,4 +49,14 @@ describe(Dealership) do
     end
   end
 
+  describe('.find') do
+    it('returns a dealership by its id number') do
+      dealership1 = Dealership.new('Velo Cult')
+      dealership1.save()
+      dealership2 = Dealership.new('Bike Farm')
+      dealership2.save()
+      expect(Dealership.find(dealership2.id())).to(eq(dealership2))
+    end
+  end
+
 end

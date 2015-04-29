@@ -24,5 +24,13 @@ class Dealership
     @@dealerships.push(self)
   end
 
+  define_singleton_method(:find) do |id|
+      @@dealerships.each() do |dealership|
+        if dealership.id() == id
+          return dealership
+        end
+      end
+      
+  end
 
 end
