@@ -13,10 +13,10 @@ describe(Vehicle) do
       expect(Vehicle.all()).to(eq([test_vehicle]))
     end
   end
-  
+
 
   describe('#make') do
-    it('returns the model of the bicycle') do
+    it('returns the make of the bicycle') do
       test_vehicle = Vehicle.new('Specialized', 'Sirrus', 2000)
       test_vehicle.save()
       expect(test_vehicle.make()).to(eq('Specialized'))
@@ -24,10 +24,10 @@ describe(Vehicle) do
   end
 
   describe('#model') do
-    it("returns the year of the bicycle") do
+    it("returns the model of the bicycle") do
       test_vehicle = Vehicle.new("Specialized", "Sirrus", 2000)
       test_vehicle.save()
-      expect(test_vehicle.year()).to(eq(2000))
+      expect(test_vehicle.model()).to(eq('Sirrus'))
     end
   end
 
