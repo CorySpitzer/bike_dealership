@@ -1,6 +1,7 @@
 class Dealership
 
   attr_reader :name
+  attr_reader :id
   @@dealerships = []
 
   define_method(:initialize) do |name|
@@ -12,5 +13,5 @@ class Dealership
   define_singleton_method(:clear) do
     @@dealerships = []
   end
-  
+
 end
