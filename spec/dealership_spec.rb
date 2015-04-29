@@ -9,9 +9,16 @@ describe(Dealership) do
 
   describe('#name') do
     it('returns the name of the dealership') do
-      test_dealership = Dealership.new('Bike Shop')
-      expect(test_dealership.name()).to(eq('Bike Shop'))
+      test_dealership = Dealership.new('Velo Cult')
+      expect(test_dealership.name()).to(eq('Velo Cult'))
     end
-
   end
+
+  describe('#id') do
+    it("returns the id of the dealership") do
+      test_dealership = Dealership.new("Velo Cult")
+      expect(test_dealership.id()).to(eq(1))
+    end
+  end
+
 end
