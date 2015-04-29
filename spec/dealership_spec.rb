@@ -59,4 +59,13 @@ describe(Dealership) do
     end
   end
 
+  describe('#add_bike') do
+    it('adds a vehicle to a given dealership') do
+      test_dealership = Dealership.new("Velo Cult")
+      test_vehicle = Vehicle.new("Specialized", "Sirrus", 2000)
+      test_dealership.add_bike(test_vehicle)
+      expect(test_dealership.bikes()).to(eq([test_vehicle]))
+    end
+  end
+
 end

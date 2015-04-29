@@ -30,7 +30,10 @@ class Dealership
           return dealership
         end
       end
-      
+  end
+
+  define_method(:add_bike) do |bike|
+    self.bikes.push(bike)
   end
 
 end
