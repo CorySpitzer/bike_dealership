@@ -20,18 +20,6 @@ class Vehicle
     @@vehicles
   end
 
-  # define_method(:year) do
-  #   @year
-  # end
-
-  # define_method(:make) do
-  #   @make
-  # end
-  #
-  # define_method(:model) do
-  #   @model
-  # end
-
   define_method(:save) do
     @@vehicles.push(self)
   end
@@ -39,5 +27,16 @@ class Vehicle
   define_singleton_method(:clear) do
     @@vehicles = []
   end
+
+  define_method(:worth_buying?) do
+    american_bikes = ["Cannondale", "Trek", "Specialized"]
+    american_bikes.include?(@make).&(self.age<(15))
+  end
+
+  define_method(:age) do
+    current_year = Time.new().year()
+    age = current_year.-(@year)
+  end
+
 
 end

@@ -39,5 +39,18 @@ describe(Vehicle) do
     end
   end
 
+  describe("#age") do
+    it("returns the vehicles age") do
+      test_vehicle = Vehicle.new("Specialized", "Sirrus", 2000)
+      expect(test_vehicle.age()).to(eq(15))
+    end
+  end
+
+  describe("#worth_buying?") do
+    it("returns false if the bicycle is not American made and less than 15 years old") do
+      test_vehicle = Vehicle.new("Specialized", "Sirrus", 2000)
+      expect(test_vehicle.worth_buying?()).to(eq(false))
+    end
+  end
 
 end
