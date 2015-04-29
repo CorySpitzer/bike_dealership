@@ -1,9 +1,12 @@
 <h1> The Dealer's Vehicles </h1>
 
 <ul>
+  <%= @dealership.bikes[0] %>
+  <%= @dealership.bikes %>
   <% @dealership.bikes.each() do |bike| %>
     <li>
     <a href="/vehicles/<%= bike.id() %>"<%= bike.model() %></a>
+    yoyoyo!
     </li>
   <% end %>
 </ul>

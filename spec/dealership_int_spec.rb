@@ -20,7 +20,7 @@ describe('the dealership app', {:type => :feature}) do
       expect(page).to(have_content('Add New Dealership'))
       fill_in('dealer-name', :with => 'Velo Cult')
       click_button('Add New Dealership')
-      click_link('Back to main page')
+      click_link('Back to main dealership page.')
       click_link('Dealerships')
       expect(page).to(have_content('Velo Cult'))
     end

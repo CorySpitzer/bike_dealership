@@ -35,6 +35,8 @@ post('/vehicles') do
   year = params.fetch("year")
   vehicle = Vehicle.new(make, model, year)
   vehicle.save()
+  dealer =
+  dealer.add_bike(vehicle)
   erb(:success)
 end
 
